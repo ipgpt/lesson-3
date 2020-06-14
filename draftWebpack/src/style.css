@@ -1,0 +1,8 @@
+.webpack {
+  color: blue;
+}
+
+.message {
+  color: green;
+  background: url('./banner.jpg');
+}
