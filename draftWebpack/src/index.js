@@ -1,1 +1,12 @@
-console.log('Hello World!');
+import './style.css';
+
+function component() {
+  const element = document.createElement('div');
+
+  element.innerHTML = 'Hello Webpack!';
+  element.classList.add('message');
+
+  return element;
+}
+
+document.body.appendChild(component());
