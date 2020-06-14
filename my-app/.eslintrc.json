@@ -24,6 +24,7 @@
     "no-undef": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "react/no-danger": "off"
   }
 }

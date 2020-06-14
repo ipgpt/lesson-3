@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import sanitizeHtml from "sanitize-html";
 import logo from "./logo.svg";
 import "./App.scss";
 
@@ -13,6 +14,19 @@ const Button = styled.button`
 `;
 
 function App() {
+  const dirtyFooter = `
+      <i>Footer</i>
+      <b>React</b>
+      <a href="#" target="_blank">click</a>
+      <code>here</code>
+  `;
+  const footer = sanitizeHtml(dirtyFooter, {
+    allowedTags: ["b", "i", "em", "strong", "a"],
+    allowedAttributes: {
+      a: ["href", "target"]
+    }
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,6 +43,7 @@ function App() {
           Learn React
         </a>
         <Button>Button</Button>
+        <div dangerouslySetInnerHTML={{ __html: footer }} />
       </header>
     </div>
   );
